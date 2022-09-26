@@ -11,3 +11,4 @@ ISSUES WITH OUR INFRASTRUCTURE
 Single Point Of Failuire - the server is a single point of failure if it crashes the website will go down as there is no redundency
 There is no way to scale up if the server reaches maximum capabilities
 The site will need to go down during upgrade to our code base
+

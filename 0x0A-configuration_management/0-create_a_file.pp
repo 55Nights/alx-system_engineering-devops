@@ -1,5 +1,5 @@
 #  create a file in /tmp
-file {'/tmp':
+file {'/tmp/school':
 ensure  => present,
 path    => '/tmp/school',
 chmod_r => '0774',

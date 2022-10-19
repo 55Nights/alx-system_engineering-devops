@@ -1,5 +1,5 @@
 # install a package
-file{'flask':
-ensure => 'pip3 install Flask'
-
+package { 'puppet-lint':
+  ensure          =>  'installed',
+  install_options =>  ['-v', '2.1.1'],
 }

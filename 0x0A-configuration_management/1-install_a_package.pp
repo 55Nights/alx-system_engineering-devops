@@ -1,5 +1,6 @@
 # install a package
-package { 'puppet-lint':
-  ensure          =>  'installed',
-  install_options =>  ['-v', '2.1.1'],
+package { 'flask':
+  ensure          => 'installed',
+  provider        => 'pip',
+  install_options =>  ['-v', '2.1.0']
 }

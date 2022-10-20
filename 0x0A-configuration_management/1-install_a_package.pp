@@ -9,7 +9,7 @@ ensure => 'installed',
 =======
 package { 'flask':
   ensure          => 'installed',
-  provider        => 'pip',
+  provider        => 'pip3',
   install_options =>  ['-v', '2.1.0']
 >>>>>>> refs/remotes/origin/master
 }

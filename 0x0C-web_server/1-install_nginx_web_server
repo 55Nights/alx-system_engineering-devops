@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Install nginx web server
+
+sudo apt-get update && sudo apt-get nginx -y
+ufw all 'Nginx full'
+echo 'Holberton School' > /var/www/html/index.html
+service nginx start

@@ -3,6 +3,5 @@
 
 sudo sed -i "s/8000/80/" /etc/nginx/sites-enabled/default
 sudo sed -i "s/8000/80/" /etc/nginx/sites-available/default
-sudo sed -i "s/ipv6only=on/ipv6only=off/" /etc/nginx/sites-enabled/default
-sudo sed -i "s/ipv6only=on/ipv6only=off/" /etc/nginx/sites-available/default
 sudo service nginx restart
+curl 0:80

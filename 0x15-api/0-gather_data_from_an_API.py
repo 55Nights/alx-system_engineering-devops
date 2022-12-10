@@ -23,4 +23,4 @@ if __name__ == "__main__":
           .format(name, complete_count, total_tasks))
     for item in json_rep:
         if item["completed"] is True:
-            print("\n\t{}".format(item["title"]))
+            print("\t {}".format(item["title"]))

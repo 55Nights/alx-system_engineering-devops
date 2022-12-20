@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 #custom 404_page
 sudo touch /var/www/html/4-not_found_page_404
-echo "Ceci n'est pas une page" > /var/www/html/4-not_found_page_404
+echo "Ceci n'est pas une page" > page_404
+sudo cp page_404  /var/www/html/4-not_found_page_404
 newstring="error\_page\ 404 \/4\-not\_found\_page\_404\;location \= \/4\-not\_found\_page\_404 \{root\ \/var\/www\/html\; internal\; \}location"
 
 sudo sed -i "s/location/$newstring/" /etc/nginx/sites-enabled/default

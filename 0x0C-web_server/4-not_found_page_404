@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 #custom 404_page
+sudo apt-get update && sudo apt-get install nginx -y
+echo "Hello World!" > index.html
+sudo cp index.html /var/www/html/index.nginx-debian.html
+newstring="location\ \/redirect_me\ \{ return\ 301\ https\:\/\/www\.youtube\.com\/watch\?v\=QH2\-TGUlwu4\;\}location"
+sudo sed -i "s/location/$newstring/" /etc/nginx/sites-enabled/default
 sudo touch /var/www/html/4-not_found_page_404
 echo "Ceci n'est pas une page" > page_404
 sudo cp page_404  /var/www/html/4-not_found_page_404

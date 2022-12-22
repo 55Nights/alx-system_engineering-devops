@@ -5,11 +5,9 @@ echo "Hello World!" > index.html
 sudo cp index.html /var/www/html/index.nginx-debian.html
 newstring="location\ \/redirect_me\ \{ return\ 301\ https\:\/\/www\.youtube\.com\/watch\?v\=QH2\-TGUlwu4\;\}location"
 sudo sed -i "s/location/$newstring/" /etc/nginx/sites-enabled/default
-sudo touch /var/www/html/4-not_found_page_404
-echo "Ceci n'est pas une page" > page_404
-echo "" >> page_404
-sudo cp page_404  /var/www/html/4-not_found_page_404
-newstring="error\_page\ 404 \/4\-not\_found\_page\_404\;location \= \/4\-not\_found\_page\_404 \{root\ \/var\/www\/html\; internal\; \}location"
+
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+newstring="error\_page\ 404 \/custom\_404\.html\;location \=  \/custom_404.html\{root\ \/usr\/share\/nginx\/html; internal\; \}location"
 
 sudo sed -i "s/location/$newstring/" /etc/nginx/sites-enabled/default
 sudo service nginx restart

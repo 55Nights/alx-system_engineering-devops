@@ -30,4 +30,4 @@ if __name__ == "__main__":
     for task in tasks:
         if task["completed"] is True:
             task_title = task["title"]
-            print("\t{}".format(task_title))
+            print("\t {}".format(task_title))

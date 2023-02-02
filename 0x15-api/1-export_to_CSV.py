@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-""" export data in the CSV format.
-Records all tasks that are owned by this employee
-Format must be: "USER_ID","USERNAME",
-"TASK_COMPLETED_STATUS","TASK_TITLE"
-File name must be: USER_ID.csv
+"""using this REST API,
+for a given employee ID,
+returns information about his/her
+TODOlist progress.
 """
-
 from csv import DictWriter, QUOTE_ALL
 import requests
 import sys

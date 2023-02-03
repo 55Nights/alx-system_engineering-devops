@@ -12,5 +12,5 @@ backend web-servers
 	balance roundrobin
 	server web1 34.207.155.28:80 check
 	server web2 35.174.204.156:80 check"
-echo "$setproxy" | sudo tee -a etc/haproxy/haproxy.cfg
+echo "$setproxy" | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo service haproxy start

@@ -10,8 +10,8 @@ frontend http
 	default_backend web-servers
 backend web-servers
 	balance roundrobin
-	server web-01 52.87.255.120:80 check
-	server web-02 100.26.220.215:80 check"
+	server web-01 47094-web-01:80 check
+	server web-02 47094-web-02:80  check"
 echo "$setproxy" | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo systemctl enable haproxy.service
 sudo service haproxy start

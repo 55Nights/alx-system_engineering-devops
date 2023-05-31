@@ -2,6 +2,8 @@
 # Show your Bash PID made easy
 #!/bin/bash
 
+#!/bin/bash
+
 # Loop through the directories in /proc that represent processes
 for pid_dir in /proc/*/; do
     pid=$(basename "$pid_dir")
@@ -11,9 +13,10 @@ for pid_dir in /proc/*/; do
         process_name=$(tr '\0' ' ' < "$pid_dir/cmdline")
 
         # Check if the process name contains the word "bash"
-        if [[ "$process_name" == *"bash"* ]]; then
+        if [[ "$process_name" == *"/bash"* ]]; then
             echo "$pid $process_name"
         fi
     fi
 done
+
  

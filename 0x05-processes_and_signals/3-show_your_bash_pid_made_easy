@@ -1,3 +1,19 @@
 #!/usr/bin/env bash
 # Show your Bash PID made easy
-pgrep "bash" 
+#!/bin/bash
+
+# Loop through the directories in /proc that represent processes
+for pid_dir in /proc/*/; do
+    pid=$(basename "$pid_dir")
+
+    # Check if the cmdline file exists for the process
+    if [ -e "$pid_dir/cmdline" ]; then
+        process_name=$(tr '\0' ' ' < "$pid_dir/cmdline")
+
+        # Check if the process name contains the word "bash"
+        if [[ "$process_name" == *"bash"* ]]; then
+            echo "$pid $process_name"
+        fi
+    fi
+done
+ 

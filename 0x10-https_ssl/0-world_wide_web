@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# will display information about subdomains.
+
+sub_info() {
+if [ -z "$2" ]
+then 
+ if [ -z "$1" ]
+ then
+	 echo "domain is mandatory"
+ else
+	 www1=$(dig "www.$1"| grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tail -1)
+	 www2=$(dig "www.$1"| grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tail -1)
+	 echo "The subdomain www is a $www1 record and points to $www2"
+	 lib1=$(dig "lb-01.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $4}' | tail -1)
+	 lib2=$(dig "lb-01.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $5}' | tail -1)
+	 echo "The subdomain lb-01 is a $lib1 record and points to $lib2"
+	 web1=$(dig "web-01.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $4}' | tail -1)
+	 web2=$(dig "web-01.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $5}' | tail -1)
+	 echo "The subdomain web-01 is a $web1 record and points to $web2"
+	 web02=$(dig "web-02.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $4}' | tail -1)
+	 web03=$(dig "web-02.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $5}' | tail -1)
+	 echo "The subdomain web-02 is a $web02 record and points to $web03"
+ fi
+else
+	 sub1=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $4}' | tail -1)
+	 sub2=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:'| awk '{print $5}' | tail -1)
+	 echo "The subdomain $2 is a $sub1 record and points to $sub2"
+fi
+}
+sub_info "$1" "$2"

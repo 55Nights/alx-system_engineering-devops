@@ -1,0 +1,16 @@
+1. load-balancer - Helps direct traffic/load to servers  to prevent one server handling or the 
+work and achieve good response times to the clients 
+2. Load-balancer is using the round robin algorithm
+3. The load balancer is configured to active- active setup
+4. The Active-Active configuration distributes the load to all servers while ative-passive the load will be distributed to other 
+servers if the current server fails
+5. How a database Primary-Replica (Master-Slave) cluster works - by enabling data 
+from one database server(master) to be replicated to more than one (slave) database servers
+6. What is the difference between the Primary node and the Replica node in regard to the application - the primary node accepte read and writes and the effect ripples to the replica nodes which only accept reads 
+
+ISSUES WITH OUR INFRASTRUCTURE
+
+1. Single Point Of Failuire - the load balancer is a single point of failure if it stops running the whole site will go down (redundency needed)
+2. The communication between the server and application is not encrypted which my result to securirty risks
+3. This set up also lacks firewalls to scan and filter out "bad traffic" traffic 
+4. No monitoring hence we wont have the perfomance  data about our servers

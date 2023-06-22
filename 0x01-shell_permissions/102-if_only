@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 sudo chown --from guillaume betty hello
+=======
+chown betty $(find hello -user guillaume)
+>>>>>>> origin/master

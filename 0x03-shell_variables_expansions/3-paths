@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 $PATH | tr : n | wc -l
+=======
+echo $PATH | tr ':' '\n' | wc -l
+>>>>>>> origin/master

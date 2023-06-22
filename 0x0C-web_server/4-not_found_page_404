@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#custom 404_page
+sudo apt-get update && sudo apt-get install nginx -y
+
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+newstring="error\_page\ 404 \/custom\_404\.html\;location \=  \/custom_404.html\{root\ \/usr\/share\/nginx\/html; internal\; \}location"
+
+sudo sed -i "s/location/$newstring/" /etc/nginx/sites-enabled/default
+sudo service nginx restart

@@ -1,0 +1,14 @@
+1. Server - hardware or software that provide service to another computer or user(clients)
+our server is running a LAMP stack (Linux os)
+2. The role of the domain name - is help us locate the address of our websitw
+3. Type of DNS record www is in www.foobar.com - A Record
+4. The role of the web server is to serve static cotent to our users
+5. The role of the application server is to server dynamic content of our website to the clients
+6. The role of the database is to store and organize our records in a tables to be accessed later
+7. The server and the client are communicating using TCP/IP  protocal
+
+ISSUES WITH OUR INFRASTRUCTURE
+Single Point Of Failuire - the server is a single point of failure if it crashes the website will go down as there is no redundency
+There is no way to scale up if the server reaches maximum capabilities
+The site will need to go down during upgrade to our code base
+

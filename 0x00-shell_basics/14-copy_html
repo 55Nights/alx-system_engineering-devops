@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 cp -u *.html ..
+=======
+cp *.html ..
+>>>>>>> origin/master

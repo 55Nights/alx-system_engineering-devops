@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 paste - - | cut -d$t -f1
+=======
+paste - - | cut -d$'\t' -f1
+>>>>>>> origin/master

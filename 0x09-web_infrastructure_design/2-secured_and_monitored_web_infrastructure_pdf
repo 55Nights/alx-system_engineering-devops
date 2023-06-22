@@ -1,0 +1,13 @@
+1. What are firewalls for - Firewalls filter incoming and outgoing network traffic depending on the organization policies
+2. Why is the traffic served over HTTPS - this achieved through the use of SSL
+3. certificate this because https is more secure than http as data is encrypted
+4. What monitoring is used for - to track changes in program outputs and performance over time and making sure it is behaving as expected
+5. How the monitoring tool is collecting data - It gathers performance data from all  application components
+6. Explain what to do if you want to monitor your web server QPS -  by installing monitoring tools.
+
+ISSUES WITH OUR INFRASTRUCTURE
+
+Why terminating SSL at the load balancer level is an issue - not all the network passing is encrypted and applications can be vulnerable to security risks like man in the middle
+
+Why having only one MySQL server capable of accepting writes is an issue - it will be a single point of failure and if it stops running it would be hard to write to database
+Why having servers with all the same components - can not be scaled up if uses increase

@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 chmod a+x hello
+=======
+chmod 111 hello
+>>>>>>> origin/master
